@@ -1,0 +1,208 @@
+body{
+  margin:0;
+  background:#111;
+  overflow:hidden;
+  touch-action:none;
+}
+canvas{
+  display:block;
+  margin:0 auto;
+  image-rendering:pixelated;
+  border:4px solid #fff;
+  background:#000;
+  box-sizing:border-box;
+  touch-action:none;
+}
+#overlay{
+  position:fixed;
+  inset:0;
+  background:#000a;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.hidden{
+  display:none !important;
+}
+.panel{
+  background:#222;
+  color:#fff;
+  border:2px solid #4caf50;
+  border-radius:16px;
+  padding:24px;
+  width:400px;
+  text-align:center;
+}
+button{
+  padding:10px 16px;
+  border:none;
+  border-radius:8px;
+  background:#1b4332;
+  color:#fff;
+  cursor:pointer;
+}
+
+#ui{
+  position:fixed;
+  top:10px;
+  left:10px;
+  z-index:100;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+}
+
+#count{
+  color:white;
+  font-size:16px;
+  background:#0008;
+  padding:6px 10px;
+  border-radius:8px;
+}
+
+.hidden{
+  display:none !important;
+}
+
+#book{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#000a;
+  z-index:200;
+}
+
+#book.hidden{
+  display:none !important;
+}
+
+#book .panel{
+  width:520px;
+  max-height:80vh;
+  overflow:auto;
+  text-align:left;
+}
+
+#book h2{
+  text-align:center;
+}
+
+#resetBtn {
+  background: #4a154b;
+}
+#resetBtn:hover {
+  background: #6b1d6e;
+}
+
+#resetDataBtn {
+  background: #8b0000;
+}
+#resetDataBtn:hover {
+  background: #b22222;
+}
+
+.book-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+#book .book-buttons button {
+  display: inline-block;
+  margin: 0;
+}
+
+/* 터치 컨트롤 스타일 */
+#touchControls {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 150;
+  pointer-events: none;
+}
+
+#touchControls.hidden {
+  display: none !important;
+}
+
+#dpad {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  pointer-events: auto;
+}
+
+.dpad-btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  touch-action: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dpad-btn:active {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+#btnUp { top: 0; left: 50px; }
+#btnLeft { top: 50px; left: 0; }
+#btnRight { top: 50px; left: 100px; }
+#btnDown { top: 100px; left: 50px; }
+
+#actionBtns {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  pointer-events: auto;
+}
+
+.action-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  color: white;
+  width: 60px;
+  height: 60px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  touch-action: none;
+  margin: 0;
+  padding: 0;
+}
+
+.action-btn:active {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* 모바일 뷰 최적화 */
+@media (max-width: 600px) {
+  .panel, #book .panel {
+    width: 90%;
+    max-width: 320px;
+    padding: 15px;
+  }
+}
