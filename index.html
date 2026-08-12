@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오승과 전설의 풋고추</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game" width="960" height="540"></canvas>
+
+  <div id="ui">
+    <button id="bookBtn">📖 엔딩 도감</button>
+    <button id="resetBtn">🔄 게임 초기화</button>
+    <span id="count"></span>
+  </div>
+
+  <div id="overlay" class="hidden">
+    <div class="panel">
+      <h2 id="endingTitle"></h2>
+      <p id="endingText"></p>
+      <button onclick="location.reload()">다시 시작</button>
+    </div>
+  </div>
+  <div id="book" class="hidden">
+    <div class="panel book">
+      <h2>엔딩 도감</h2>
+      <div id="endingList"></div>
+      <div class="book-buttons">
+        <button id="resetDataBtn">🗑️ 도감 기록 초기화</button>
+        <button id="closeBook">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
